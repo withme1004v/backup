@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      ul.slideshow {
+        position: relative;
+        width: 500px;
+        height: 300px;
+        margin: 0 auto;
+        list-style: none;
+      }
+      ul.slideshow li {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+      }
+      ul.slideshow li.on {
+        opacity: 1;
+      }
+      ul.slideshow li img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="slideshow">
+      <li><img src="images/photo1.jpg" alt="photo1" /></li>
+      <li><img src="images/photo2.jpg" alt="photo2" /></li>
+      <li><img src="images/photo3.jpg" alt="photo3" /></li>
+      <li><img src="images/photo4.jpg" alt="photo4" /></li>
+      <li><img src="images/photo5.jpg" alt="photo5" /></li>
+      <li><img src="images/photo6.jpg" alt="photo6" /></li>
+    </ul>
+    <ul id="btn">
+      <li id="next">다음</li>
+      <li id="prev">이전</li>
+    </ul>
+    <script>
+      let i = 0;
+      let slides = document.getElementsByTagName("li");
+      let slideNext = document.getElementById("next");
+      let slidePrev = document.getElementById("prev");
+      let slideBtn = document.getElementById("btn");
+      slides[0].style.opacity = "1";
+      function slide() {
+        slides[i].classList.remove("on");
+        i++;
+        if (i > 5) {
+          i = 0;
+        }
+        slides[i].classList.add("on");
+      }
+      let interval;
+      function slideStart() {
+        interval = setInterval(slide, 1000);
+      }
+      function slideStop() {
+        clearInterval(interval);
+      }
+      slideStart();
+      slideBtn.addEventListener("mouseenter", function () {
+        slideStop();
+      });
+      slideBtn.addEventListener("mouseleave", slideStart);
+      slideNext.onclick = function () {
+        slide();
+      };
+      slidePrev.onclick = function () {
+        slides[i].classList.remove("on");
+        i--;
+        if (i < 0) {
+          i = 5;
+        }
+        slides[i].classList.add("on");
+      };
+    </script>
+  </body>
+</html>

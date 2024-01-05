@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 1. window.onload = function(){
+           웹페이지가 모두 로드된 후 실행되는 코드
+        } */
+       /*  window.onload = function(){
+          let x = document.getElementById("btn");
+          console.log(x);  
+        } */
+        //2. 
+        /* window.addEventListener("load",function(){
+           문서가 로드된 후 실행할 함수  
+        }); */
+        /* window.addEventListener("load",function(){
+          let x = document.getElementById("btn");
+          console.log(x);  
+        }); */
+        //3.
+        /* document.addEventListener("DOMContentLoaded",function(){
+            DOM(document object model) 구성이 완료된 후 실행할 함수  
+        }); */
+        /* document.addEventListener("DOMContentLoaded",function(){
+          let x = document.getElementById("btn");
+          x.addEventListener("click",function(e){
+            e.preventDefault();//a태그 링크 막기
+            console.log(x);
+          });
+        }); */
+        document.addEventListener("DOMContentLoaded",function(){
+           let x = document.getElementById("btn"); 
+           x.onclick = function(){
+            console.log(x);
+            return false;//a태그 링크 막기(onclick에서 동작)
+           }
+        });
+    </script>
+</head>
+<body>
+    <!-- <a href="#" id="btn" onclick="myfnc();return false;">클릭</a> -->
+    <a href="#" id="btn" >클릭</a>
+</body>
+</html>

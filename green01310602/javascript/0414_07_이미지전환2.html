@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 500px;
+            height: 300px;
+            margin: 0 auto;
+        }
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+    
+</head>
+<body>
+    <div><img src="images/photo1.jpg" alt="photo1" id="photo"></div>
+    <script>
+        let i = 1;
+        let x = document.getElementById("photo");
+        function slide() {
+          x.setAttribute("src","images/photo"+i+".jpg");
+          x.setAttribute("alt","photo"+i);
+          i++;
+          if(i > 6) {
+            i = 1;
+          }
+        }
+        let interval;
+        //setInterval(slide,1000);
+        function slidestart() {
+            interval = setInterval(function(){
+            slide();
+        },1000);  
+        }
+        function slidestop() {
+            clearInterval(interval);
+        }
+        slidestart();
+        x.addEventListener("mouseenter",function(){
+            slidestop(); 
+        });
+        x.addEventListener("mouseleave",function(){
+            slidestart();
+        });
+    </script>
+</body>
+</html>

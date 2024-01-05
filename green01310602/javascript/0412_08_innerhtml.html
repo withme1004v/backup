@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>논리연산자</title>
+        
+</head>
+<body>
+    <p id="txt">aaaaaaa            bbbbbb     <span>cccccc</span><a href="#">링크</a>
+    </p>
+    <p id="demo"></p>
+    <button onclick="getinnerHtml()">innerHtml</button>
+    <button onclick="getinnerText()">innerText</button>
+    <button onclick="gettextContent()">textContent</button>
+    <script>
+       function getinnerHtml() {
+        let text = document.getElementById("txt").innerHTML;
+        document.getElementById("demo").innerText = text;
+       }
+       function getinnerText() {
+        let text = document.getElementById("txt").innerText;
+        document.getElementById("demo").innerText = text;
+       }
+       function gettextContent() {
+        let text = document.getElementById("txt").textContent;
+        document.getElementById("demo").innerText = text;
+       }
+    </script>
+</body>
+</html>

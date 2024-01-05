@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #div1 {
+        width: 500px;
+        height: 500px;
+        border: 1px solid #000;
+        overflow: auto;
+      }
+      #content {
+        width: 2000px;
+        height: 2000px;
+        background: #ccc;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="div1">
+      <div id="content">scroll me</div>
+    </div>
+    <p id="demo"></p>
+    <button>스크롤 원위치</button>
+    <script>
+      let scr = document.getElementById("div1");
+      let btn = document.getElementsByTagName("button")[0];
+      /*scr.onscroll = function () {
+        let x = scr.scrollLeft;
+        let y = scr.scrollTop;
+        document.getElementById("demo").innerHTML =
+          "가로 : " + x + "<br>" + "세로 : " + y;
+      };*/
+      scr.addEventListener("scroll", function () {
+        let x = scr.scrollLeft;
+        let y = scr.scrollTop;
+        document.getElementById("demo").innerHTML =
+          "가로 : " + x + "<br>" + "세로 : " + y;
+      });
+      /*btn.onclick = function () {
+        scr.scrollTop = 0;
+        scr.scrollLeft = 0;
+      };*/
+      btn.addEventListener("click", function () {
+        scr.scrollTop = 0;
+        scr.scrollLeft = 0;
+      });
+    </script>
+  </body>
+</html>

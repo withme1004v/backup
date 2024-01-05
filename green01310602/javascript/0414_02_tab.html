@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .tabcontent {
+            padding: 50px;
+            text-align: center;
+        }
+        .tabButton {
+            display: flex;
+        }
+        .tablink {
+            width: 25%;
+            padding: 10px 0;
+            text-align: center;
+            cursor: pointer;
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="tabcontent">
+        <h1>content1</h1>
+    </div>
+    <div class="tabcontent">
+        <h1>content2</h1>
+    </div>
+    <div class="tabcontent">
+        <h1>content3</h1>
+    </div>
+    <div class="tabcontent">
+        <h1>content4</h1>
+    </div>
+    <div class="tabButton">
+        <p class="tablink" onclick="tab(0)">content1</p>
+        <p class="tablink" onclick="tab(1)">content2</p>
+        <p class="tablink" onclick="tab(2)">content3</p>
+        <p class="tablink" onclick="tab(3)">content4</p>
+    </div>
+    <script>
+        let bg_color = ["red", "green","blue","orange"];
+        let content = document.getElementsByClassName("tabcontent");
+        let btn = document.getElementsByClassName("tablink");
+         function tab(j) {
+          for(let i = 0; i<=3;i++) {
+            content[i].style.backgroundColor = bg_color[i]; 
+            btn[i].style.backgroundColor = bg_color[i];
+            content[i].style.display = "none"; 
+            content[j].style.display = "block"; 
+          }  
+        } 
+        tab(0);
+    </script>
+</body>
+</html>

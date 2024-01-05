@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      let name = prompt("이름을 입력해주세요");
+      let jumsu = prompt("점수를 입력해주세요");
+      let hakjum = "";
+      console.log(typeof jumsu);
+      if (jumsu >= 90) {
+        hakjum = "A";
+      } else if (jumsu >= 80) {
+        hakjum = "B";
+      } else if (jumsu >= 70) {
+        hakjum = "C";
+      } else if (jumsu >= 60) {
+        hakjum = "D";
+      } else {
+        hakjum = "F";
+      }
+      document.write(
+        name +
+          "님이 입력한 점수는 " +
+          jumsu +
+          "이고 학점은 " +
+          hakjum +
+          "학점입니다"
+      );
+    </script>
+  </head>
+  <body></body>
+</html>

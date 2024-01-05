@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      ul {
+        list-style: none;
+      }
+      a {
+        text-decoration: none;
+      }
+      .menu {
+        width: 1280px;
+        margin: 0 auto;
+        border: 1px solid #000;
+      }
+      .menu ul {
+        display: flex;
+        height: 50px;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .menu ul li {
+        flex: 1 1 20%;
+        text-align: center;
+        line-height: 50px;
+      }
+      .menu ul li:hover,
+      .menu ul li.on {
+        background: #ccc;
+      }
+      .submenu {
+        background: rgba(0, 0, 0, 0.5);
+        height: 0;
+        overflow: hidden;
+        transition: height 1s;
+      }
+      .submenu.on {
+        height: 160px;
+      }
+      .submenu .lnb {
+        width: 1280px;
+        margin: 0 auto;
+      }
+      .submenu .lnb > ul {
+        display: flex;
+        justify-content: space-between;
+      }
+      .submenu .lnb > ul > li {
+        width: 20%;
+        text-align: center;
+        line-height: 40px;
+      }
+      .submenu .lnb li ul li:hover {
+        background: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="menu">
+        <ul>
+          <li><a href="#">메뉴1</a></li>
+          <li><a href="#">메뉴2</a></li>
+          <li><a href="#">메뉴3</a></li>
+          <li><a href="#">메뉴4</a></li>
+          <li><a href="#">메뉴5</a></li>
+        </ul>
+      </div>
+      <div class="submenu">
+        <div class="lnb">
+          <ul>
+            <li>
+              <ul>
+                <li><a href="#">서브메뉴1</a></li>
+                <li><a href="#">서브메뉴1</a></li>
+                <li><a href="#">서브메뉴1</a></li>
+                <li><a href="#">서브메뉴1</a></li>
+              </ul>
+            </li>
+            <li>
+              <ul>
+                <li><a href="#">서브메뉴2</a></li>
+                <li><a href="#">서브메뉴2</a></li>
+                <li><a href="#">서브메뉴2</a></li>
+                <li><a href="#">서브메뉴2</a></li>
+              </ul>
+            </li>
+            <li>
+              <ul>
+                <li><a href="#">서브메뉴3</a></li>
+                <li><a href="#">서브메뉴3</a></li>
+                <li><a href="#">서브메뉴3</a></li>
+                <li><a href="#">서브메뉴3</a></li>
+              </ul>
+            </li>
+            <li>
+              <ul>
+                <li><a href="#">서브메뉴4</a></li>
+                <li><a href="#">서브메뉴4</a></li>
+                <li><a href="#">서브메뉴4</a></li>
+                <li><a href="#">서브메뉴4</a></li>
+              </ul>
+            </li>
+            <li>
+              <ul>
+                <li><a href="#">서브메뉴5</a></li>
+                <li><a href="#">서브메뉴5</a></li>
+                <li><a href="#">서브메뉴5</a></li>
+                <li><a href="#">서브메뉴5</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <script>
+      let sub = document.querySelector(".submenu");
+      let gnb = document.querySelectorAll(".menu ul li");
+      let lnb = document.querySelectorAll(".lnb>ul>li");
+      gnb.forEach(function (value, index) {
+        value.addEventListener("mouseenter", function () {
+          sub.classList.add("on");
+        });
+        value.addEventListener("mouseleave", function () {
+          sub.classList.remove("on");
+        });
+      });
+      lnb.forEach(function (value, index) {
+        value.addEventListener("mouseenter", function () {
+          console.log(index);
+          sub.classList.add("on");
+          let x = gnb[index];
+          x.classList.add("on");
+        });
+        value.addEventListener("mouseleave", function () {
+          sub.classList.remove("on");
+          let x = gnb[index];
+          x.classList.remove("on");
+        });
+      });
+    </script>
+  </body>
+</html>

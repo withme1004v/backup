@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <script>
+    let person = { name: "홍길동", age: 20, hobby: "영화감상" };
+    const car = {
+      model: "경차",
+      color: "검정",
+      price: 1000000,
+      info: function () {
+        return this.model + this.color;
+      },
+    };
+    const man = new Object();
+    man.firstname = "홍";
+    man.lastname = "길동";
+    man.age = 30;
+    man.info = function () {
+      return this.firstname;
+    };
+    document.write(person.name + "<br>");
+    document.write(car.info() + "<br>");
+    document.write(man.info + "<br>");
+  </script>
+  <body></body>
+</html>

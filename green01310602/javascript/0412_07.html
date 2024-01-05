@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>논리연산자</title>
+        
+</head>
+<body>
+    
+    <script>
+       document.write(parseFloat("10.33")+parseFloat(10.33)+"<br>");
+       document.write(parseFloat("30 20 30")+parseFloat(10)+"<br>");
+       document.write(parseFloat("a")+"<br>");
+       document.write(parseInt("a")+"<br>");
+       document.write(parseInt("10 20 30")+parseInt(10)+"<br>");
+       document.write(parseInt("10.33")+parseInt(10.33)+"<br>");
+       let x = "5";
+       let y = + x;//x += 1
+       document.write(y+ typeof y +"<br>");
+       let str1 = "hello";
+       let str2 = "world";
+       document.write(str1+' '+str2+"<br>");
+       document.write(`${str1} ${str2}${"<br>"}`);
+       let a = 10;
+       let b = String(a)+String(123)+String(100+23);
+       document.write(b+"<br>");
+       document.write((123).toString()+String(123)+"<br>");
+       let num = 1000000;
+       document.write(num.toExponential()+"<br>");
+       let num1 = 5.123456789;
+       document.write(num1.toExponential(3)+"<br>");
+       let num2 = 5.523456789;
+       let num2_type = num2.toFixed();
+       document.write(typeof num2_type+"<br>");
+       document.write(parseInt(num2)+"<br>");
+       let num3 = 5.123456
+       document.write(num3.toPrecision(2)+num3.toPrecision(2)+"<br>");
+    </script>
+</body>
+</html>

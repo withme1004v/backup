@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      section {
+        height: 100vh;
+      }
+      section:first-child {
+        background: #f00;
+      }
+      section:nth-child(2) {
+        background: #0f0;
+      }
+      section:nth-child(3) {
+        background: #00f;
+      }
+      section:nth-child(4) {
+        background: #0ff;
+      }
+    </style>
+  </head>
+  <body>
+    <section></section>
+    <section></section>
+    <section></section>
+    <section></section>
+    <script>
+      //let ht = window.innerHeight;
+      let ht = window.pageYOffset; //현재스크롤 위치를 나타내는 값반환
+      console.log("ht" + ht);
+      //document.getElementsByTagName("section")[0].style.height = ht + "px";
+      window.addEventListener("wheel", function (event) {
+        let ht = window.pageYOffset; //현재스크롤 위치를 나타내는 값반환
+        console.log("ht :" + ht);
+        let htTop = document.documentElement.scrollTop;
+        console.log("htTop :" + htTop);
+        //console.log(event.deltaY);//아래스크롤100위스크롤-100
+        console.log(event.wheelDelta); //아래스크롤-120위스크롤120
+        let delta = event.deltaY || event.wheelDelta;
+        let isdown = delta < 0;
+        console.log("isdown : " + isdown);
+        let scrTop = window.pageYOffset || document.documentElement.scrollTop;
+        let nextPage = isdown
+          ? Math.floor(scrTop / window.innerHeight) * window.innerHeight
+          : Math.ceil(scrTop / window.innerHeight) * window.innerHeight;
+        console.log("nextPage :" + nextPage);
+        window.scrollTo({
+          //웹페이지의 스크롤 위치를 지정된위치로 이동
+          top: nextPage,
+          behavior: "smooth",
+          //기본값 auto smooth를 사용하면 스크롤 애니메이션이 적용
+        });
+      });
+    </script>
+  </body>
+</html>

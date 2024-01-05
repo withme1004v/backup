@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+      }
+      body div {
+        flex: 1 1 10%;
+        /* width: 10%; */
+      }
+    </style>
+    <script>
+      /* document.write("<h1>2단</h1>");
+      let result;
+      for (let i = 1; i <= 9; i++) {
+        result = 2 * i;
+        document.write("2X" + i + "=" + result + "<br>");
+      }
+      document.write("<h1>3단</h1>");
+      let result3;
+      for (let i = 1; i <= 9; i++) {
+        result3 = 3 * i;
+        document.write("3X" + i + "=" + result3 + "<br>");
+      }*/
+      for (let i = 2; i <= 21; i++) {
+        document.write("<div>");
+        document.write("<h1>" + i + "단</h1>");
+        for (let j = 1; j <= 9; j++) {
+          document.write(i + "X" + j + "=" + i * j + "<br>");
+        }
+        document.write("</div>");
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

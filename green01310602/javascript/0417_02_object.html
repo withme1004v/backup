@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <script>
+    let name = "홍길동";
+    let kor = 90;
+    let eng = 80;
+    let math = 100;
+    let student = { name: "홍길동", kor: 90, eng: 80, math: 100 };
+    student.total = student.kor + student.eng + student.math;
+    student.avg = student.total / 3;
+    student.info = function () {
+      document.write(
+        student.name +
+          " 님의 총점은 " +
+          student.total +
+          "점이고 평균은 " +
+          student.avg +
+          "점 입니다"
+      );
+    };
+    student.info();
+  </script>
+  <body></body>
+</html>

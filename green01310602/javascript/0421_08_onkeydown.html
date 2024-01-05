@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="info" />
+    <script>
+      /*document.getElementById("info").onkeydown = function () {
+        alert("키보드를 눌렀습니다");
+      };*/
+      document.getElementById("info").addEventListener("keydown", function () {
+        alert("키보드를 눌렀습니다");
+      });
+    </script>
+  </body>
+</html>

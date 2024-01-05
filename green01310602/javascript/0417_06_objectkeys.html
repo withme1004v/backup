@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <script>
+    let car = { model: "현대", color: "검정", price: 1000000 };
+    let arr = ["현대", "검정", 1000000];
+    /*let x = Object.keys(car);
+    let y = Object.keys(arr);
+    document.write(x + "<br>" + y + "<br>");*/
+    let txt = "";
+    arr.forEach(function (value, index, array) {
+      txt += array + "<br>";
+    });
+    document.write(txt);
+  </script>
+  <body></body>
+</html>

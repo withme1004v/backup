@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .tabcontent {
+            padding: 50px;
+            text-align: center;
+        }
+        .tabButton {
+            display: flex;
+        }
+        .tablink {
+            width: 25%;
+            padding: 10px 0;
+            text-align: center;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded",function(){
+        let bg_color = ["red", "green","blue","orange"];
+        let content = document.querySelectorAll(".tabcontent");
+        let btn = document.querySelectorAll(".tablink");
+        for(let i = 0; i<=3;i++) {
+            content[i].style.backgroundColor = bg_color[i]; 
+            btn[i].style.backgroundColor = bg_color[i];
+            content[i].style.display = "none"; 
+        } 
+        content[0].style.display = "block";
+        let con = btn[0]; 
+        btn.forEach(function(item,index){
+            //item.addEventListener("click", function(e){
+                item.onclick = function(e){
+                let j = Array.from(btn).indexOf(e.target);
+                console.log(j);
+                for(let i = 0; i<=3;i++) {
+                    content[i].style.backgroundColor = bg_color[i]; 
+                    btn[i].style.backgroundColor = bg_color[i];
+                    content[i].style.display = "none"; 
+                    content[j].style.display = "block"; 
+                }
+          //  });
+            }
+        });
+         
+    });
+    </script>
+</head>
+<body>
+    <div class="tabcontent">
+        <h1>content1</h1>
+    </div>
+    <div class="tabcontent">
+        <h1>content2</h1>
+    </div>
+    <div class="tabcontent">
+        <h1>content3</h1>
+    </div>
+    <div class="tabcontent">
+        <h1>content4</h1>
+    </div>
+    <div class="tabButton">
+        <p class="tablink">content1</p>
+        <p class="tablink">content2</p>
+        <p class="tablink">content3</p>
+        <p class="tablink">content4</p>
+    </div>
+    
+</body>
+</html>

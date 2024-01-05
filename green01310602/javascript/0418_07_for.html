@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      let cars = ["현대", "삼성", "아우디", "벤츠", "기아"];
+      let text = "";
+      /*text += cars[0] + "<br>";
+      text += cars[1] + "<br>";
+      text += cars[2] + "<br>";
+      text += cars[3] + "<br>";
+      text += cars[4] + "<br>";*/
+      /*for(초기값;조건;증감값){
+        실행문
+      }*/
+      let len = cars.length;
+      //   for (let i = 0; i < len; i++) {
+      //     text += cars[i] + i + "<br>";
+      //   }
+      for (let i = 4; i >= 0; i--) {
+        text += cars[i] + i + "<br>";
+      }
+      document.write(text);
+    </script>
+  </head>
+  <body></body>
+</html>
